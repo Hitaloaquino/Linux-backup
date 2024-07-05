@@ -24,9 +24,11 @@ e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 # Script de backup
 
 
+1. Criei um arquivo com a extensão ```.sh ``` com o nome e comando ``` nano backup-completo.sh```
+
 #!/usr/bin/env sh
 
-1. Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
+# Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
 ### origem_backup="/opt"
 
 # Criar um diretorio para colocar o backup do diretorio /opt
