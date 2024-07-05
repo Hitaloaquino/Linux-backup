@@ -21,12 +21,12 @@ Aqui abaixo contem um script de backup de roda na plataforma linux, para realiza
 está rodando no diretório /opt e faremos o backup para o diretorio /mnt/backup/opt diariamente as 03:00 da MADRUGADA, 
 e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 
-# S
+# Script de backup
 
 
 #!/usr/bin/env sh
 
-## Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
+1. Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
 origem_backup="/opt"
 
 # Criar um diretorio para colocar o backup do diretorio /opt
