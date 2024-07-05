@@ -25,14 +25,35 @@ e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 
 
 1. Criei um arquivo com a extensão ```.sh ``` com o nome e comando ``` nano backup-completo.sh```
+2. Dentro desse arquivo que foi criado, coloquei o seguinte script:
 
+```
+#!/usr/bin/env sh
+origem_backup="/opt"
+mkdir -v /mnt/backup/opt
+destino_backup="/mnt/backup/opt"
+formato_data=$(date "+%d-%m-%Y %H:%M:%S")
+final_arquivo="backup-$formato_data.tar.gz"
+arquivo_log="/var/log/dia-backup.log"
+if tar -czSf "$destino_backup/$final_arquivo" "$origem_backup"; then
+   echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
+else
+   echo "[$formato_data] ERROR BACKUP.\n" >> $arquivo_log
+fi
+
+find $destino_backup -mtime +10 -delete
+```
+
+3. Aqui estou descrevendo o que cada etapa do script vai fazer.
+
+# Qual é o tipo de shell que vai ser chamado?
 #!/usr/bin/env sh
 
 # Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
-### origem_backup="/opt"
+origem_backup="/opt"
 
 # Criar um diretorio para colocar o backup do diretorio /opt
-## mkdir -v /mnt/backup/opt
+mkdir -v /mnt/backup/opt
 
 # diretorio de destino do backup
 destino_backup="/mnt/backup/opt"
@@ -51,6 +72,7 @@ arquivo_log="/var/log/dia-backup.log"
 ## o comando tar -czvf = local de destino do backup + formato do arquivo com tipo de compressão + local de origem do backup
 ## o comando abaixo é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem "BACKUP SUCESSO", se não for realizado
 ## com sucesso enviar um log com a mansagem "ERROR BACKUP" para o local onde será armazenado os logs de sucesso e error.
+
 if tar -czSf "$destino_backup/$final_arquivo" "$origem_backup"; then
    echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
 else
