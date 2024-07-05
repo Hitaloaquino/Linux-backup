@@ -27,7 +27,7 @@ e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 #!/usr/bin/env sh
 
 1. Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
-origem_backup="/opt"
+## origem_backup="/opt"
 
 # Criar um diretorio para colocar o backup do diretorio /opt
 ## mkdir -v /mnt/backup/opt
