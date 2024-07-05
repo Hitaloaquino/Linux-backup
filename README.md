@@ -10,7 +10,7 @@ Depois poste seu script no ```github``` como forma de resultado e nao esqueçam 
 ## Tecnologias Utilizadas
 
 - [VirtualBox](https://www.virtualbox.org/) (veja o guia de instalação [aqui](https://www.virtualbox.org/wiki/Downloads)) : é um software de virtualização de código aberto desenvolvido pela Oracle, que permite criar e executar máquinas virtuais em um computador físico.
-- **Ubuntu**: é um popular sistema operacional baseado em Linux, que é gratuito e de código aberto, podendo ser usado num computador ou servidor.
+- [Ubuntu Server](https://ubuntu.com/download/server/): é um popular sistema operacional baseado em Linux, que é gratuito e de código aberto, podendo ser usado num computador ou servidor.
 - **Putty**: um terminal de simulação open source que foi desenvolvido para agir como um cliente de conexões seguras através de protocolos raw TCP, Telnet, rlogin e porta serial. 
 - **Notepad++**: é um pequeno e rápido editor de texto de código aberto, para Windows, que permite trabalhar com arquivos de textos simples e código-fonte de diversas linguagens de programação.
 
