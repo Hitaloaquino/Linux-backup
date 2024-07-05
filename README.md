@@ -2,11 +2,10 @@
 # 04 de Julho de 2024 - Hitalo Aquino
 # ESTE É O CENARIO
 
-Pense no seguinte cenário.
-Seu gerente diz: Temos uma aplicação que roda na pasta /opt.
-Precisamos garantir que o conteúdo que está la seja feito o backup, DIARIAMENTE,sua tarefa sera criar uma automação em script bash que execute isso as 03:00 DA MADRUGADA todos os dias.
-Utilize-se das ferramentas do linux para fazer isso um exemplo é o cron e git e registre os logs do seu script usando o “echo” assim ficará mais fácil identificar uma etapa que vir a falhar nos testes.
-Depois poste seu script no github como forma de resultado e nao esqueçam de testar a solução e documentar em formato MarkDown também é bom.
+Seu gerente diz, temos uma aplicação que roda na pasta ```/opt ```
+e precisamos garantir que o conteúdo que está la seja feito o backup, ```DIARIAMENTE```,sua tarefa sera criar uma automação em script ```bash``` que execute diariamente as 03:00 DA MADRUGADA.
+Utilize-se das ferramentas do linux para fazer isso um exemplo é o ```cron e git``` e registre os logs do seu script usando o ```echo``` assim ficará mais fácil identificar uma etapa que vir a falhar nos testes.
+Depois poste seu script no ```github``` como forma de resultado e nao esqueçam de testar a solução e documentar em formato ```MarkDown``` também é bom.
 
 ## Tecnologias Utilizadas
 
