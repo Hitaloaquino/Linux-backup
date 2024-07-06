@@ -43,9 +43,9 @@ fi
 
 find $destino_backup -mtime +10 -delete
 ```
-3. Salvei o arquivo e movi o mesmo para o diretorio ```/usr/local/sbin```
+3. Salvei o arquivo com o nome ```backup-completo.sh``` e movi o mesmo para o diretorio ```/usr/local/sbin``` para facilitar na hora de executar o script com o ```cron```
 
-4. Depois foi criado uma agendamento de tarefa com o ```CRON``` , digitei o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```  
+4. Depois foi criado uma agendamento de tarefa com o ```cron``` , digitei o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```  
 
 6. Aqui estou descrevendo o que cada etapa do script vai fazer.
 
