@@ -22,8 +22,8 @@
 # 
 # m h  dom mon dow   command
 
-# Criar um agendamento de tarefa de backup com o CRON
+# Criar um agendamento de tarefa de backup com o cron
 # digita logado como root o comando "crontab -e"
 # digita esse comando na ultima linha do arquivo.
-# o comando informado acima vai iniciar todos os dias as 03:00 e o passei o caminho onde está o script para ser excutado.
+# o comando informado é executado diariamente as 03:00 com o caminho de onde está o script.
 0 3 * * * /usr/local/sbin/backup-completo.sh
