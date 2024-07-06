@@ -19,10 +19,10 @@ Depois poste seu script no ```github``` como forma de resultado e nao esqueçam 
 
 ## Lógica do código
 
-Aqui abaixo contem um script de backup de roda na plataforma linux, para realizar a tarefa solicitada pelo Gerente onde temos uma aplicação que está rodando no diretório ```/opt``` e faremos o backup para o diretorio ```/mnt/backup/opt``` diariamente as 03:00 da MADRUGADA, 
+Abaixo contem um script de backup de roda na plataforma linux, para realizar a tarefa solicitada pelo Gerente onde temos uma aplicação que está rodando no diretório ```/opt``` e faremos o backup para o diretorio ```/mnt/backup/opt``` diariamente as 03:00 da MADRUGADA, 
 e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 
-# Script de backup
+## Script de backup
 
 
 1. Criei um arquivo com a extensão ```.sh ``` com o comando ``` nano backup-completo.sh```
@@ -46,7 +46,36 @@ find $destino_backup -mtime +10 -delete
 ```
 3. Salvei o arquivo com o nome ```backup-completo.sh``` e movi o mesmo para o diretorio ```/usr/local/sbin``` para facilitar na hora de executar o script com o ```cron```
 
-4. Depois foi criado uma agendamento de tarefa com o ```cron``` , digitei o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```  
+4. Depois foi criado uma agendamento de tarefa com o ```cron``` , digitei logado como ```root```o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```, se precisar saber quais paramentos tem que configurar dentro do ```crontab``` recomendo esse site: [crontab guru](https://crontab.guru/), abaixo o arquivo ```crontab``` aberto observe a ultima linha. 
+
+```
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+# o comando informado é executado diariamente as 03:00 com o caminho de onde está o script.
+0 3 * * * /usr/local/sbin/backup-completo.sh
+```
 
 6. Aqui estou descrevendo o que cada etapa do script vai fazer.
 
