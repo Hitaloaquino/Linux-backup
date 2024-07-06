@@ -24,8 +24,8 @@ e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 # Script de backup
 
 
-1. Criei um arquivo com a extensão ```.sh ``` com o nome e comando ``` nano backup-completo.sh```
-2. Dentro desse arquivo que foi criado, coloquei o seguinte script:
+1. Criei um arquivo com a extensão ```.sh ``` com o comando ``` nano backup-completo.sh```
+2. Dentro desse arquivo que foi criado o seguinte script:
 
 ```
 #!/usr/bin/env sh
@@ -43,8 +43,11 @@ fi
 
 find $destino_backup -mtime +10 -delete
 ```
+3. Salvei o arquivo e movi o mesmo para o diretorio ```/usr/local/sbin```
 
-3. Aqui estou descrevendo o que cada etapa do script vai fazer.
+4. Depois foi criado uma agendamento de tarefa com o ```CRON``` , digitei o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```  
+
+6. Aqui estou descrevendo o que cada etapa do script vai fazer.
 
 # Qual é o tipo de shell que vai ser chamado?
 #!/usr/bin/env sh
