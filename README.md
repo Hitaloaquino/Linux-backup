@@ -13,7 +13,8 @@ Depois poste seu script no ```github``` como forma de resultado e nao esqueçam 
 - [Ubuntu Server](https://ubuntu.com/download/server/): é um popular sistema operacional baseado em Linux, que é gratuito e de código aberto, podendo ser usado num computador ou servidor.
 - [Putty](https://www.putty.org/): é um terminal de simulação open source que foi desenvolvido para agir como um cliente de conexões seguras através de protocolos raw TCP, Telnet, rlogin e porta serial. 
 - [Notepad++](https://notepad-plus-plus.org/downloads/): é um pequeno e rápido editor de texto de código aberto, para Windows, que permite trabalhar com arquivos de textos simples e código-fonte de diversas linguagens de programação.
-- [GitHub](https://github.com//): é um serviço baseado em nuvem que hospeda um sistema de controle de versão (VCS) chamado Git. Ele permite que os desenvolvedores colaborem e façam mudanças em projetos compartilhados enquanto mantêm um registro detalhado do seu progresso.
+- [GitHub](https://github.com/): é um serviço baseado em nuvem que hospeda um sistema de controle de versão (VCS) chamado Git. Ele permite que os desenvolvedores colaborem e façam mudanças em projetos compartilhados enquanto mantêm um registro detalhado do seu progresso.
+- [Visual Studio Code](https://code.visualstudio.com/): é um editor de código-fonte leve, mas poderoso, executado em sua área de trabalho e disponível para Windows, macOS e Linux. Ele vem com suporte integrado para JavaScript, TypeScript e Node.js e possui um rico ecossistema de extensões para outras linguagens e tempos de execução (como C, C#, Java, Python, PHP, Go, .NET).
 
 
 ## Lógica do código
