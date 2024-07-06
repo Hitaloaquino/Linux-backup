@@ -108,7 +108,8 @@ final_arquivo="backup-$formato_data.tar.gz"
 arquivo_log="/var/log/dia-backup.log"
 ```
 
-8. inicio de backup.\n
+8. inicio de backup:
+
 o comando tar -czvf = local de destino do backup + formato do arquivo com tipo de compressão + local de origem do backup, o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem "BACKUP SUCESSO", se não for realizado com sucesso enviar um log com a mansagem "ERROR BACKUP" para o local onde será armazenado os logs de sucesso e error.
 ```
 if tar -czSf "$destino_backup/$final_arquivo" "$origem_backup"; then
