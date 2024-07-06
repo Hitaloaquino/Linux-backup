@@ -18,8 +18,7 @@ Depois poste seu script no ```github``` como forma de resultado e nao esqueçam 
 
 ## Lógica do código
 
-Aqui abaixo contem um script de backup de roda na plataforma linux, para realizar a tarefa solicitada pelo Gerente onde temos uma aplicação que 
-está rodando no diretório /opt e faremos o backup para o diretorio /mnt/backup/opt diariamente as 03:00 da MADRUGADA, 
+Aqui abaixo contem um script de backup de roda na plataforma linux, para realizar a tarefa solicitada pelo Gerente onde temos uma aplicação que está rodando no diretório ```/opt``` e faremos o backup para o diretorio ```/mnt/backup/opt``` diariamente as 03:00 da MADRUGADA, 
 e tambem utilizaremos o CRON para realizar o agendamento de forma automatica.
 
 # Script de backup
