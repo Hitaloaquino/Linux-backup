@@ -80,7 +80,9 @@ find $destino_backup -mtime +10 -delete
 # Aqui estou descrevendo o que cada etapa do script vai fazer
 
 1. Qual é o tipo de shell que vai ser chamado?
-```#!/usr/bin/env sh```
+```
+#!/usr/bin/env sh
+```
 
 2.Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
 ```origem_backup="/opt"```
