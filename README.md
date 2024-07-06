@@ -83,24 +83,30 @@ find $destino_backup -mtime +10 -delete
 ```
 #!/usr/bin/env sh
 ```
-
 2.Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
-```origem_backup="/opt"```
-
+```
+origem_backup="/opt"
+```
 3. Criar um diretorio para colocar o backup do diretorio /opt.
-```mkdir -v /mnt/backup/opt```
-
+```
+mkdir -v /mnt/backup/opt
+```
 4. diretorio de destino do backup.
-```destino_backup="/mnt/backup/opt"```
-
+```
+destino_backup="/mnt/backup/opt"
+```
 5. formato do arquivo com data e hora.
-```formato_data=$(date "+%d-%m-%Y %H:%M:%S")```
-
+```
+formato_data=$(date "+%d-%m-%Y %H:%M:%S")
+```
 6. formato que o arquivo compactado terá no final.
-```final_arquivo="backup-$formato_data.tar.gz"```
-
+```
+final_arquivo="backup-$formato_data.tar.gz"
+```
 7. Local onde será aramazenado os logs
-```arquivo_log="/var/log/dia-backup.log"```
+```
+arquivo_log="/var/log/dia-backup.log"
+```
 
 8. inicio de backup.
 o comando tar -czvf = local de destino do backup + formato do arquivo com tipo de compressão + local de origem do backup, o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem "BACKUP SUCESSO", se não for realizado com sucesso enviar um log com a mansagem "ERROR BACKUP" para o local onde será armazenado os logs de sucesso e error.
