@@ -105,8 +105,9 @@ final_arquivo="backup-$formato_data.tar.gz"
 ```
 arquivo_log="/var/log/dia-backup.log"
 ```
+8. Atualizar a data e hora do servidor, esse comando mostra o time zone que está no servidor ```timedatectl```, depois voce verifica quais os locais proximo a sua região que voce deseja colocar o time zone com o comando ```timedatectl list-timezones | grep America``` no meu caso escolhi o continente ```AMERICA```, depois de analisar e saber qual é o local mais adequado digitei o seguinte comando ```timedatectl set-timezone America/Bahia``` e para finalizar reiniciar o serviço com o comando ```systemctl restart systemd-timedated```, pronto serviço reiniciado e atualizado com sucesso.
 
-8. inicio de backup:
+9. inicio de backup:
 
 Um exemplo:```tar (opções) [fonte][destino]```
 
@@ -127,7 +128,7 @@ fi
 
 find $destino_backup -mtime +10 -delete
 ```
-9. Na ultima etapa do script vamos criar um agendamento de tarefa de backup com o comando  ```cron```, digite logado como ```root``` o comando ```crontab -e```,em seguida o arquivo com as configurações do ```crontab```será aberto, então digite esse comando na ultima linha do arquivo.
+10. Na ultima etapa do script vamos criar um agendamento de tarefa de backup com o comando  ```cron```, digite logado como ```root``` o comando ```crontab -e```,em seguida o arquivo com as configurações do ```crontab```será aberto, então digite esse comando na ultima linha do arquivo.
 ```
 0 3 * * * /usr/local/sbin/backup-completo.sh
 ``` 
