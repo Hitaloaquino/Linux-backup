@@ -77,7 +77,7 @@ find $destino_backup -mtime +10 -delete
 0 3 * * * /usr/local/sbin/backup-completo.sh
 ```
 
-# Aqui estou descrevendo o que cada etapa do script vai fazer
+# Etapa do script !!!!
 
 1. Qual é o tipo de shell que vai ser chamado?
 ```
@@ -112,7 +112,7 @@ arquivo_log="/var/log/dia-backup.log"
 
 o comando tar -czvf = local de destino do backup + formato do arquivo com tipo de compressão + local de origem do backup, o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem "BACKUP SUCESSO", se não for realizado com sucesso enviar um log com a mansagem "ERROR BACKUP" para o local onde será armazenado os logs de sucesso e error.
 ```
-if tar -czSf "$destino_backup/$final_arquivo" "$origem_backup"; then
+if tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup"; then
    echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
 else
    echo "[$formato_data] ERROR BACKUP.\n" >> $arquivo_log
