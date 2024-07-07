@@ -119,7 +119,7 @@ O comando ```tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup" ``` tem
 -z: Utiliza o gzip para compactar e descompactar os arquivos .tar.gz;
 -f: Indica que o destino é um arquivo em disco, e não uma unidade de fita magnética;
 ```
-O comando ```if , else , fi```é uma condicional se o BACKUP for executado com sucesso, enviar uma mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar uma mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
+O comando ```if , else , fi```é uma condicional se o BACKUP for executado com sucesso, enviar uma mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar uma mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error. E na ultima linha é para realizar a exclusão dos backups com mais de 10 dias.
 ```
 if tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup"; then
    echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
@@ -127,9 +127,12 @@ else
    echo "[$formato_data] ERROR BACKUP.\n" >> $arquivo_log
 fi
 
-# excluir os backups que tiverem mais de 10 dias
 find $destino_backup -mtime +10 -delete
 ```
-9. Criar um agendamento de tarefa de backup com o comando  ```cron```, digite logado como ```root``` o comando ```crontab -e```,em seguida o arquivo com as configurações do ```crontab```então digite esse comando na ultima linha do arquivo ```0 3 * * * /usr/local/sbin/backup-completo.sh``` o comando informado vai iniciar diariamente as 03:00 e o caminho onde está o script para ser excutado. 
+9. Na ultima etapa do script vamos criar um agendamento de tarefa de backup com o comando  ```cron```, digite logado como ```root``` o comando ```crontab -e```,em seguida o arquivo com as configurações do ```crontab```será aberto, então digite esse comando na ultima linha do arquivo.
+```
+0 3 * * * /usr/local/sbin/backup-completo.sh
+``` 
+O comando informado vai iniciar diariamente as 03:00 e o caminho onde está o script para ser excutado. 
 
 # Espero ter explicado todas as etapas do script, muito obrigado !!!!!
