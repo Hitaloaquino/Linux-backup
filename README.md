@@ -44,9 +44,9 @@ fi
 
 find $destino_backup -mtime +10 -delete
 ```
-3. Salvei o arquivo com o nome ```backup-completo.sh``` e movi o mesmo para o diretorio ```/usr/local/sbin``` para facilitar na hora de executar o script com o ```cron```
+3. Salvei o arquivo com o nome ```backup-completo.sh``` , em seguida tornei o arquivo executavel com o comando ```chmod u+x backup-completo.sh``` e movi o mesmo para o diretorio ```/usr/local/sbin/``` para facilitar na hora de executar o script com o ```cron```.
 
-4. Depois foi criado uma agendamento de tarefa com o ```cron``` , digitei logado como ```root```o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```, se precisar saber quais paramentos tem que configurar dentro do ```crontab``` recomendo esse site: [crontab guru](https://crontab.guru/), abaixo o arquivo ```crontab``` aberto observe a ultima linha. 
+4. Criado uma agendamento de tarefa com o ```cron``` , digitei logado como ```root```o comando ```crontab -e``` e digitei na ultima linha o seguinte comando: ```0 3 * * * /usr/local/sbin/backup-completo.sh```, se precisar saber quais paramentos tem que configurar dentro do ```crontab``` recomendo esse site: [crontab guru](https://crontab.guru/), abaixo o arquivo ```crontab``` aberto observe a ultima linha onde foi escrito o comando que  será excutado pelo ```cron```.
 
 ```
 # Edit this file to introduce tasks to be run by cron.
@@ -73,7 +73,6 @@ find $destino_backup -mtime +10 -delete
 # 
 # m h  dom mon dow   command
 
-# o comando informado é executado diariamente as 03:00 com o caminho de onde está o script.
 0 3 * * * /usr/local/sbin/backup-completo.sh
 ```
 
