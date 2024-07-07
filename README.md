@@ -118,11 +118,8 @@ O comando ```tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup" ``` tem
 -v: Lista todos os arquivos processados;
 -z: Utiliza o gzip para compactar e descompactar os arquivos .tar.gz;
 -f: Indica que o destino é um arquivo em disco, e não uma unidade de fita magnética;
-
-
 ```
-
-o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar um log com a mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
+O comando ```if , else , fi```é uma condicional se o BACKUP for executado com sucesso, enviar uma mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar uma mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
 ```
 if tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup"; then
    echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
