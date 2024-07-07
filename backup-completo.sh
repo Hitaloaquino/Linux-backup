@@ -12,10 +12,3 @@ else
 fi
 
 find $destino_backup -mtime +10 -delete
-
-# Criar um agendamento de tarefa de backup com o CRON
-## digita logado como root o comando "crontab -e"
-## digita esse comando na ultima linha do arquivo.
-## 0 3 * * * /usr/local/sbin/backup-completo.sh
-## o comando informado acima vai iniciar todos os dias as 03:00 e o passei o caminho onde está o script para ser excutado.
-
