@@ -121,14 +121,6 @@ fi
 # excluir os backups que tiverem mais de 10 dias
 find $destino_backup -mtime +10 -delete
 ```
-# Criar um agendamento de tarefa de backup com o CRON
-## digita logado como root o comando "crontab -e"
-## digita esse comando na ultima linha do arquivo.
-## 0 3 * * * /usr/local/sbin/backup-completo.sh
-## o comando informado acima vai iniciar todos os dias as 03:00 e o passei o caminho onde está o script para ser excutado.
+9. Criar um agendamento de tarefa de backup com o comando  ```cron```, digite logado como ```root``` o comando ```crontab -e```,em seguida o arquivo com as configurações do ```crontab```então digite esse comando na ultima linha do arquivo ```0 3 * * * /usr/local/sbin/backup-completo.sh``` o comando informado vai iniciar diariamente as 03:00 e o caminho onde está o script para ser excutado. 
 
-
-
-
-
-
+# Espero ter explicado todas as etapas do script, muito obrigado !!!!!
