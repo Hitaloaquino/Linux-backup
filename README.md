@@ -110,12 +110,16 @@ arquivo_log="/var/log/dia-backup.log"
 
 8. inicio de backup:
 
-O comando ```tar -cvzf``` tem a seguinte função:
+Um exemplo:```tar (opções) [fonte][destino]```
+
+O comando ```tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup" ``` tem a seguinte :
 ```
 -c: Cria um novo arquivo .tar;
 -v: Lista todos os arquivos processados;
 -z: Utiliza o gzip para compactar e descompactar os arquivos .tar.gz;
 -f: Indica que o destino é um arquivo em disco, e não uma unidade de fita magnética;
+
+
 ```
 
 o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar um log com a mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
