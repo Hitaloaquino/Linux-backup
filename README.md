@@ -83,34 +83,42 @@ find $destino_backup -mtime +10 -delete
 ```
 #!/usr/bin/env sh
 ```
-2.Diretorio de backup - criar uma variavel para armazenar o conteudo do diretorio /opt
+2.Criar uma variavel para armazenar o conteudo do diretorio /opt
 ```
 origem_backup="/opt"
 ```
-3. Criar um diretorio para colocar o backup do diretorio /opt.
+3. Criar um local para colocar o backup do diretorio /opt.
 ```
 mkdir -v /mnt/backup/opt
 ```
-4. diretorio de destino do backup.
+4. Local de destino do backup.
 ```
 destino_backup="/mnt/backup/opt"
 ```
-5. formato do arquivo com data e hora.
+5. Formato de data e hora.
 ```
 formato_data=$(date "+%d-%m-%Y %H:%M:%S")
 ```
-6. formato que o arquivo compactado terá no final.
+6. Formato que o arquivo compactado terá no final.
 ```
 final_arquivo="backup-$formato_data.tar.gz"
 ```
-7. Local onde será aramazenado os logs
+7. Local onde será armazenado os logs.
 ```
 arquivo_log="/var/log/dia-backup.log"
 ```
 
 8. inicio de backup:
 
-o comando tar -czvf = local de destino do backup + formato do arquivo com tipo de compressão + local de origem do backup, o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar um log com a mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
+O comando ```tar -cvzf``` tem a seguinte função:
+```
+-c: Cria um novo arquivo .tar;
+-v: Lista todos os arquivos processados;
+-z: Utiliza o gzip para compactar e descompactar os arquivos .tar.gz;
+-f: Indica que o destino é um arquivo em disco, e não uma unidade de fita magnética;
+```
+
+o comando seguinte é uma condicional = se o BACKUP for executado com sucesso, enviar um log com a mensagem ```BACKUP SUCESSO```, se não for realizado com sucesso enviar um log com a mansagem ```ERROR BACKUP``` para o local onde será armazenado os logs de sucesso e error.
 ```
 if tar -cvzf "$destino_backup/$final_arquivo" "$origem_backup"; then
    echo "[$formato_data] BACKUP SUCESSO.\n" >> $arquivo_log
