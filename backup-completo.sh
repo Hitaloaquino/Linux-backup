@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 origem_backup="/opt"
-mkdir -v /mnt/backup/opt
 destino_backup="/mnt/backup/opt"
 formato_data=$(date "+%d-%m-%Y %H:%M:%S")
 final_arquivo="backup-$formato_data.tar.gz"
